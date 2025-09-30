@@ -1,0 +1,9 @@
+# Modelfile
+FROM llama4:maverick
+ADAPTER ./out/plantuml_lora.gguf
+
+# (Optional) strongly bias the behavior for your target task
+SYSTEM """
+You are a PlantUML assistant. When asked to generate a UML diagram, output ONLY valid PlantUML code enclosed between @startuml and @enduml. Prefer concise, idiomatic syntax.
+"""
+
